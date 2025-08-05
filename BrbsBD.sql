@@ -1,12 +1,12 @@
 CREATE DATABASE BrbsBD;
 
 CREATE TABLE Produtos (
-  idProduto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  idProduto INT NOT NULL PRIMARY KEY,
   nomeProduto VARCHAR(50) NOT NULL,
   descProduto VARCHAR(100) NOT NULL,
   marcaProduto VARCHAR(50) NOT NULL,
   variacaoProduto varchar(200) NOT NULL,
-  tipoProduto VARCHAR(50) NOT NULL
+  tipoProduto VARCHAR(50) NOT NULL,
   valorProduto FLOAT NOT NULL
   
 );
@@ -21,9 +21,10 @@ CREATE TABLE Imagens (
 );
 
 
-INSERT INTO Produtos(nomeProduto, descProduto, marcaProduto, variacaoProduto, tipoProduto, valorProduto)
+INSERT INTO Produtos(idProduto, nomeProduto, descProduto, marcaProduto, variacaoProduto, tipoProduto, valorProduto)
 VALUES
   (
+    1,
     'BIC Cristal Precisão - Caneta Esferográfica 0.8mm',
     'desc mamlcalmclmac', 
     'BIC',
@@ -32,6 +33,7 @@ VALUES
     6.60
   ),
   (
+    2,
     'BIC Dura Mais - Caneta Esferográfica 1.0mm',
     'desc 2 mckankncc', 
     'BIC',
