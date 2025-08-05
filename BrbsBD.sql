@@ -6,7 +6,7 @@ CREATE TABLE Produtos (
   descProduto VARCHAR(100) NOT NULL,
   marcaProduto VARCHAR(50) NOT NULL,
   variacaoProduto varchar(200) NOT NULL,
-  tipoProduto VARCHAR(50)
+  tipoProduto VARCHAR(50) NOT NULL
   valorProduto FLOAT NOT NULL
   
 );
