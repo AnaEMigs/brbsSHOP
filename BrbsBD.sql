@@ -4,34 +4,44 @@ CREATE TABLE Produtos (
   idProduto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nomeProduto VARCHAR(50) NOT NULL,
   descProduto VARCHAR(100) NOT NULL,
-  valorProduto VARCHAR(10) NOT NULL
+  marcaProduto VARCHAR(50) NOT NULL,
+  variacaoProduto varchar(200) NOT NULL,
+  tipoProduto VARCHAR(50)
+  valorProduto FLOAT NOT NULL
   
 );
 
 CREATE TABLE Imagens (
-  idProduto INT NOT NULL,
   linkImagem VARCHAR(500) NOT NULL PRIMARY KEY,
+  indexImagem INT NOT NULL,
+  idProduto INT NOT NULL,
   
   FOREIGN KEY (idProduto) REFERENCES Produtos(idProduto)
 
 );
 
 
-INSERT INTO Produtos(nomeProduto, descProduto, valorProduto)
+INSERT INTO Produtos(nomeProduto, descProduto, marcaProduto, variacaoProduto, tipoProduto, valorProduto)
 VALUES
   (
-    'Caneta BIC 0.7mm', 
-    'A Caneta BIC Cristal que já é sinônimo de qualidade no mundo inteiro, apresenta a Cristal Precisão e Suavidade, caneta com Ponta Ultra Fina (0.7mm) que proporciona uma maciez na escrita e uma alta precisão no traço. Ponta Bola de Tungstênio, esfera perfeita e muito resistente.',
-    '0.70'
+    'BIC Cristal Precisão -Caneta Esferográfica 0.8mm',
+    'desc mamlcalmclmac', 
+    'BIC',
+    'Azul\Preto\Vermelho',
+    'Caneta',
+    6.60
   ),
   (
-    'Borracha Faber-Castell Dust-Free',
-    'A série Faber-Castell Dust-Free eraser oferece o melhor desempenho em apagamento limpo. Também não contém plastificante nocivo - Phthalate. A fórmula única "Dust-Free" torna o apagador macio e garante um excelente apagamento limpo e sem manchas.',
-    '1.50'
+    'BIC Dura Mais -Caneta Esferográfica 1.0mm',
+    'desc 2 mckankncc', 
+    'BIC',
+    'Azul\Preto\Vermelho',
+    'Caneta',
+    35.60
   )
-  
-INSERT INTO Imagens(idProduto, linkImagem)
+
+INSERT INTO Imagens(idProduto, indexImagem, linkImagem)
 VALUES
-  (1, 'linkImgCaneta1'),
-  (1, 'linkImgCaneta2'),
-  (2, 'linkImgBorracha')
+  (1, 1, 'https://i.postimg.cc/jqnT7ybM/61-I5mks75t-L-AC-SL1300.jpg'),
+  (1, 2, 'https://i.postimg.cc/R0JdRCZx/61e-Xbu7n-LBL-AC-SL1300.jpg'),
+  (2, 1, 'https://i.postimg.cc/gkfnhGQZ/61-FBGb-A2-HGL-AC-SL1000.jpg')
