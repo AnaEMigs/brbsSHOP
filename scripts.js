@@ -36,4 +36,4 @@ postgresql://postgres:[YOUR-PASSWORD]@db.hcbytmeovnvzwqehqual.supabase.co:5432/p
 // Use this file to add JavaScript to your project
 
 
-console.log("JS aq");
+document.writeln("JS aq");
