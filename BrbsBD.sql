@@ -24,7 +24,7 @@ CREATE TABLE Imagens (
 INSERT INTO Produtos(nomeProduto, descProduto, marcaProduto, variacaoProduto, tipoProduto, valorProduto)
 VALUES
   (
-    'BIC Cristal Precisão -Caneta Esferográfica 0.8mm',
+    'BIC Cristal Precisão - Caneta Esferográfica 0.8mm',
     'desc mamlcalmclmac', 
     'BIC',
     'Azul\Preto\Vermelho',
@@ -32,7 +32,7 @@ VALUES
     6.60
   ),
   (
-    'BIC Dura Mais -Caneta Esferográfica 1.0mm',
+    'BIC Dura Mais - Caneta Esferográfica 1.0mm',
     'desc 2 mckankncc', 
     'BIC',
     'Azul\Preto\Vermelho',
