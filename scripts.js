@@ -36,4 +36,25 @@ postgresql://postgres:[YOUR-PASSWORD]@db.hcbytmeovnvzwqehqual.supabase.co:5432/p
 // Use this file to add JavaScript to your project
 
 
-document.writeln("JS aq");
+const supabaseUrl = 'postgresql://postgres:[YOUR-PASSWORD]@db.hcbytmeovnvzwqehqual.supabase.co:5432/postgres';
+const supabaseKey = 'analinda124';
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+async function carregarDados() {
+    let { data: produtos, error } = await supabase
+    .from('produtos')
+    .select('*')
+    if (error) console.error(error)
+    else {
+    const lista = document.getElementById('produtos');
+    produtos.forEach(produtos => {
+        const item = document.createElement('li');
+        item.textContent = `${produtos.nomeProduto} (${produtos.valorProduto})`;
+        lista.appendChild(item);
+    });
+    }
+}
+
+window.onload = () => {
+    carregarDados();
+}
