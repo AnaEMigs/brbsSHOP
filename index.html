@@ -65,37 +65,37 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <img class="card-img-top product-image" 
-                        src="https://i.postimg.cc/VvfHNXrG/caneta-esferografica-cristal-up-1-2mm-bic-3811-1-b2b0d7fcc4b821eddaaa9c0c0058a111.webp" 
-                        data-images='["https://i.postimg.cc/VvfHNXrG/caneta-esferografica-cristal-up-1-2mm-bic-3811-1-b2b0d7fcc4b821eddaaa9c0c0058a111.webp"]' 
+                        src="https://i.postimg.cc/NfLpPs1H/caneta-esferografica-cristal-fina-0-8mm-bic-3785-1-5bab4eb59131698bc7eb6074253b3e0d.webp" 
+                        data-images='["https://i.postimg.cc/NfLpPs1H/caneta-esferografica-cristal-fina-0-8mm-bic-3785-1-5bab4eb59131698bc7eb6074253b3e0d.webp"]' 
                         alt="Produto" />
 
                         <div class="card-body p-4">
                             <div class="text-center">
-                                 <h5 class="fw-bolder product-name" onclick="toggleDescription(this)">Fancy Product</h5>
-                                 <div class="price">R$ 2,10</div>
+                                 <h5 class="fw-bolder product-name" onclick="toggleDescription(this)">BIC Cristal Fina - Caneta Esferográfica 0.8mm</h5>
+                                 <div class="price">R$ 1,30</div>
 
                             </div>
                         </div>
                         <script>
-document.querySelectorAll('.product-image').forEach(img => {
-    let interval;
-    let currentIndex = 0;
-    const images = JSON.parse(img.getAttribute('data-images'));
-
-    img.addEventListener('mouseenter', () => {
-        interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % images.length;
-            img.src = images[currentIndex];
-        }, 800); // troca a cada 0.8s
-    });
-
-    img.addEventListener('mouseleave', () => {
-        clearInterval(interval);
-        currentIndex = 0;
-        img.src = images[0]; // volta para a primeira
-    });
-});
-</script>
+                        document.querySelectorAll('.product-image').forEach(img => {
+                            let interval;
+                            let currentIndex = 0;
+                            const images = JSON.parse(img.getAttribute('data-images'));
+                        
+                            img.addEventListener('mouseenter', () => {
+                                interval = setInterval(() => {
+                                    currentIndex = (currentIndex + 1) % images.length;
+                                    img.src = images[currentIndex];
+                                }, 800); // troca a cada 0.8s
+                            });
+                        
+                            img.addEventListener('mouseleave', () => {
+                                clearInterval(interval);
+                                currentIndex = 0;
+                                img.src = images[0]; // volta para a primeira
+                            });
+                        });
+                        </script>
 
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                             <div class="text-center">
