@@ -3,79 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho de Compras</title>
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="styles.css" rel="stylesheet">
-     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/j57XZnDH/favicon-32x32.png" />
-
+    <title>Carrinho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="index.html">Minha Loja</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
+<div class="container py-5">
+    <h2>Carrinho de Compras</h2>
+    <div id="cart-items"></div>
+    <h4 class="mt-4">Total: R$ <span id="cart-total">0</span></h4>
+</div>
 
-<!-- Conteúdo -->
-<section class="py-5">
-    <div class="container px-4 px-lg-5">
-        <h2 class="mb-4">Carrinho de Compras</h2>
+<script>
+function renderCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartHTML = '';
+    let total = 0;
 
-        <div class="table-responsive">
-            <table class="table align-middle">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Preço</th>
-                        <th>Quantidade</th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Item 1 -->
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="https://dummyimage.com/80x80/dee2e6/6c757d.jpg" class="me-3 rounded" alt="Produto">
-                                Fancy Product
-                            </div>
-                        </td>
-                        <td>R$ 40,00</td>
-                        <td><input type="number" class="form-control" value="1" min="1" style="width:80px"></td>
-                        <td>R$ 40,00</td>
-                        <td><button class="btn btn-sm btn-danger">Remover</button></td>
-                    </tr>
-                    <!-- Item 2 -->
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="https://dummyimage.com/80x80/dee2e6/6c757d.jpg" class="me-3 rounded" alt="Produto">
-                                Special Item
-                            </div>
-                        </td>
-                        <td>R$ 18,00</td>
-                        <td><input type="number" class="form-control" value="2" min="1" style="width:80px"></td>
-                        <td>R$ 36,00</td>
-                        <td><button class="btn btn-sm btn-danger">Remover</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    if (cart.length === 0) {
+        cartHTML = '<p>Seu carrinho está vazio.</p>';
+    } else {
+        cart.forEach(item => {
+            let subtotal = item.price * item.quantity;
+            total += subtotal;
+            cartHTML += `
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <img src="${item.image}" width="60" class="me-3">
+                    <div class="flex-grow-1">
+                        <strong>${item.name}</strong><br>
+                        R$ ${item.price} x ${item.quantity}
+                    </div>
+                    <div>R$ ${subtotal}</div>
+                </div>
+            `;
+        });
+    }
 
-        <!-- Resumo do carrinho -->
-        <div class="text-end mt-4">
-            <h4>Total: <span class="text-primary">R$ 76,00</span></h4>
-            <a href="checkout.html" class="btn btn-success mt-2">Finalizar Compra</a>
-        </div>
-    </div>
-</section>
+    document.getElementById('cart-items').innerHTML = cartHTML;
+    document.getElementById('cart-total').textContent = total.toFixed(2);
+}
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+renderCart();
+</script>
+
 </body>
 </html>
