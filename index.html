@@ -137,33 +137,44 @@ document.querySelectorAll('.product-image').forEach(img => {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Funções JS -->
-    <script>
-    function toggleDescription(element) {
-        let desc = element.closest(".card-body").querySelector(".description");
-        desc.style.display = desc.style.display === "none" ? "block" : "none";
+ <script>
+function addToCart(button) {
+    let card = button.closest(".card");
+
+    // Pega os dados do card
+    let name = card.querySelector(".product-name").innerText;
+    let priceText = card.querySelector(".price").innerText.replace("R$", "").replace(",", ".").trim();
+    let price = parseFloat(priceText);
+    let image = card.querySelector(".card-img-top").src;
+
+    // Recupera carrinho do localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Se já existir o produto, aumenta a quantidade
+    let existing = cart.find(item => item.name === name);
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({ name, price, image, quantity: 1 });
     }
-    function toggleColors(button) {
-        let colors = button.closest(".card-footer").querySelector(".color-options");
-        colors.style.display = colors.style.display === "none" ? "block" : "none";
-    }
-    function addToCart(name, price, image) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let existing = cart.find(item => item.name === name);
-        if (existing) {
-            existing.quantity += 1;
-        } else {
-            cart.push({ name, price, image, quantity: 1 });
-        }
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
-        alert('Produto adicionado ao carrinho!');
-    }
-    function updateCartCount() {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        document.getElementById('cart-count').textContent = totalItems;
-    }
+
+    // Salva no localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Atualiza contador e avisa
     updateCartCount();
-    </script>
+    alert('Produto adicionado ao carrinho!');
+}
+
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalItems;
+}
+
+// Atualiza contador ao carregar a página
+updateCartCount();
+</script>
+
 </body>
 </html>
