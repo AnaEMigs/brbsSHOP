@@ -64,33 +64,6 @@
                 <!-- Produto 1 -->
                 <div class="col mb-5">
                     <div class="card h-100">
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="Produto 1" />
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <h5 class="fw-bolder product-name" onclick="toggleDescription(this)">Fancy Product</h5>
-                                $40.00 - $80.00
-                                <p class="description mt-2" style="display:none;">
-                                    Este é um produto incrível com várias opções e ótima qualidade.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <button class="btn btn-outline-dark mt-auto" type="button" onclick="toggleColors(this)">Opções</button>
-                                <div class="color-options mt-3" style="display:none;">
-                                    <span class="color" style="background:red;"></span>
-                                    <span class="color" style="background:blue;"></span>
-                                    <span class="color" style="background:green;"></span>
-                                    <span class="color" style="background:yellow;"></span>
-                                </div>
-                                    <button class="btn btn-outline-dark mt-auto" onclick="addToCart('Fancy Product', 40, 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg')">Comprar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                <!-- Você pode repetir mais produtos aqui -->
-                <div class="card h-100">
     <img class="card-img-top product-image" 
          src="img1.jpg" 
          data-images='["https://i.postimg.cc/VvfHNXrG/caneta-esferografica-cristal-up-1-2mm-bic-3811-1-b2b0d7fcc4b821eddaaa9c0c0058a111.webp","https://i.postimg.cc/NfLpPs1H/caneta-esferografica-cristal-fina-0-8mm-bic-3785-1-5bab4eb59131698bc7eb6074253b3e0d.webp"]' 
@@ -125,6 +98,23 @@ document.querySelectorAll('.product-image').forEach(img => {
 });
 </script>
 
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark mt-auto" type="button" onclick="toggleColors(this)">Opções</button>
+                                <div class="color-options mt-3" style="display:none;">
+                                    <span class="color" style="background:red;"></span>
+                                    <span class="color" style="background:blue;"></span>
+                                    <span class="color" style="background:green;"></span>
+                                    <span class="color" style="background:yellow;"></span>
+                                </div>
+                                    <button class="btn btn-outline-dark mt-auto" onclick="addToCart('Fancy Product', 40, 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg')">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Você pode repetir mais produtos aqui -->
+                
             </div>
         </div>
     </section>
