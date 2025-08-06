@@ -175,6 +175,17 @@ function updateCartCount() {
 
 // Atualiza contador ao carregar a página
 updateCartCount();
+     
+</script>
+<script>
+function toggleColors(button) {
+    let colors = button.closest(".card-footer").querySelector(".color-options");
+    if (colors.style.display === "none" || colors.style.display === "") {
+        colors.style.display = "block";
+    } else {
+        colors.style.display = "none";
+    }
+}
 </script>
 
 </body>
