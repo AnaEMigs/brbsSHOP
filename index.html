@@ -86,7 +86,11 @@
                         <span class="color" style="background:green;"></span>
                         <span class="color" style="background:yellow;"></span>
                     </div>
-                        <a class="btn btn-outline-dark mt-auto" href="cart.html">Comprar</a>
+<button class="btn btn-outline-dark mt-auto" 
+        type="button" 
+        onclick="addToCart('Fancy Product', 40, 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg')">
+    Comprar
+</button>
                     </div>
                 </div>
             </div>
@@ -131,5 +135,22 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+                    <script>
+function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Procura se o item já está no carrinho
+    let existing = cart.find(item => item.name === name);
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({ name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Produto adicionado ao carrinho!');
+}
+</script>
+
     </body>
 </html
