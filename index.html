@@ -62,17 +62,17 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
                 <!-- Produto 1 -->
-                <div class="col mb-5"> //div do fundo do produto
-                    <div class="card h-100"> //div do cartao
+                <div class="col mb-5">
+                    <div class="card h-100">
                         <img class="card-img-top product-image" 
-                        src="img1.jpg" 
-                        data-images='["https://i.postimg.cc/VvfHNXrG/caneta-esferografica-cristal-up-1-2mm-bic-3811-1-b2b0d7fcc4b821eddaaa9c0c0058a111.webp","https://i.postimg.cc/NfLpPs1H/caneta-esferografica-cristal-fina-0-8mm-bic-3785-1-5bab4eb59131698bc7eb6074253b3e0d.webp"]' 
+                        src="https://i.postimg.cc/VvfHNXrG/caneta-esferografica-cristal-up-1-2mm-bic-3811-1-b2b0d7fcc4b821eddaaa9c0c0058a111.webp" 
+                        data-images='["https://i.postimg.cc/VvfHNXrG/caneta-esferografica-cristal-up-1-2mm-bic-3811-1-b2b0d7fcc4b821eddaaa9c0c0058a111.webp"]' 
                         alt="Produto" />
 
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <h5 class="fw-bolder">Produto com Carrossel</h5>
-                                R$ 99,90
+                                <h5 class="fw-bolder">BIC Cristal UP - Caneta Esferográfica 1.2mm</h5>
+                                R$ 2,10
                             </div>
                         </div>
                         <script>
@@ -100,10 +100,15 @@ document.querySelectorAll('.product-image').forEach(img => {
                             <div class="text-center">
                                 <button class="btn btn-outline-dark mt-auto" type="button" onclick="toggleColors(this)">Opções</button>
                                 <div class="color-options mt-3" style="display:none;">
-                                    <span class="color" style="background:red;"></span>
-                                    <span class="color" style="background:blue;"></span>
-                                    <span class="color" style="background:green;"></span>
-                                    <span class="color" style="background:yellow;"></span>
+                                    <!-- Azul\Azul Claro\Laranja\Preto\Rosa\Verde\Vermelho\Violeta -->
+                                    <span class="color" style="background:#060270;"></span>
+                                    <span class="color" style="background:#3DD3D8;"></span>
+                                    <span class="color" style="background:#EFA545"></span>
+                                    <span class="color" style="background:#020202;"></span>
+                                    <span class="color" style="background:#FB21CC;"></span>
+                                    <span class="color" style="background:#49F040;"></span>
+                                    <span class="color" style="background:#D22A2A;"></span>
+                                    <span class="color" style="background:#A95CC1;"></span>
                                 </div>
                                 <button class="btn btn-outline-dark mt-auto" onclick="addToCart('Fancy Product', 40, 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg')">Comprar</button>
                             </div>
