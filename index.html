@@ -6,10 +6,13 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>BRBS Shop</title>
+    
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/j57XZnDH/favicon-32x32.png" />
+    
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="styles.css" rel="stylesheet" />
     <style>
@@ -58,17 +61,19 @@
 
     <!-- Section-->
     <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
+        <div class="container px-4 px-lg-5 mt-5"> <!-- div do fundo todo -->
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> <!-- div q agrupa os produtos -->
 
-                <!-- Produto 1 -->
+                <!-- Produto 1 (67-125(58ln)) -->
                 <div class="col mb-5">
                     <div class="card h-100">
+                        <!-- Imagem do produto, podendo ser 1 ou mais -->
                         <img class="card-img-top product-image" 
-                        src="https://i.postimg.cc/NfLpPs1H/caneta-esferografica-cristal-fina-0-8mm-bic-3785-1-5bab4eb59131698bc7eb6074253b3e0d.webp" 
-                        data-images='["https://i.postimg.cc/NfLpPs1H/caneta-esferografica-cristal-fina-0-8mm-bic-3785-1-5bab4eb59131698bc7eb6074253b3e0d.webp"]' 
-                        alt="Produto" />
+                            src="https://i.postimg.cc/NfLpPs1H/caneta-esferografica-cristal-fina-0-8mm-bic-3785-1-5bab4eb59131698bc7eb6074253b3e0d.webp" 
+                            data-images='["https://i.postimg.cc/NfLpPs1H/caneta-esferografica-cristal-fina-0-8mm-bic-3785-1-5bab4eb59131698bc7eb6074253b3e0d.webp"]' 
+                            alt="Produto" />
 
+                        <!-- Nome do produto -->
                         <div class="card-body p-4">
                             <div class="text-center">
                                  <h5 class="fw-bolder product-name" onclick="toggleDescription(this)">BIC Cristal Fina - Caneta Esferográfica 0.8mm</h5>
@@ -76,45 +81,44 @@
 
                             </div>
                         </div>
+
+                        <!-- script para funcionar +1 imagem no produto -->
                         <script>
-                        document.querySelectorAll('.product-image').forEach(img => {
-                            let interval;
-                            let currentIndex = 0;
-                            const images = JSON.parse(img.getAttribute('data-images'));
-                        
-                            img.addEventListener('mouseenter', () => {
-                                interval = setInterval(() => {
-                                    currentIndex = (currentIndex + 1) % images.length;
-                                    img.src = images[currentIndex];
-                                }, 800); // troca a cada 0.8s
+                            document.querySelectorAll('.product-image').forEach(img => {
+                                let interval;
+                                let currentIndex = 0;
+                                const images = JSON.parse(img.getAttribute('data-images'));
+                            
+                                img.addEventListener('mouseenter', () => {
+                                    interval = setInterval(() => {
+                                        currentIndex = (currentIndex + 1) % images.length;
+                                        img.src = images[currentIndex];
+                                    }, 800); // troca a cada 0.8s
+                                });
+                            
+                                img.addEventListener('mouseleave', () => {
+                                    clearInterval(interval);
+                                    currentIndex = 0;
+                                    img.src = images[0]; // volta para a primeira
+                                });
                             });
-                        
-                            img.addEventListener('mouseleave', () => {
-                                clearInterval(interval);
-                                currentIndex = 0;
-                                img.src = images[0]; // volta para a primeira
-                            });
-                        });
                         </script>
 
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
+                        <!-- div dos botaos opção e comprar -->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent"> 
+                            <div class="text-center"> <!-- div pra centralizar os botoes -->
+                                
+                                <!-- Button Opção -->
                                 <button class="btn btn-outline-dark mt-auto" type="button" onclick="toggleColors(this)">Opções</button>
                                 <div class="color-options mt-3" style="display:none;">
-                                    <!-- Azul\Azul Claro\Laranja\Preto\Rosa\Verde\Vermelho\Violeta -->
+                                    <!-- Azul\Preto\Vermelho -->
                                     <span class="color" style="background:#060270;"></span>
-                                    <span class="color" style="background:#3DD3D8;"></span>
-                                    <span class="color" style="background:#EFA545"></span>
                                     <span class="color" style="background:#020202;"></span>
-                                    <br />
-                                    <span class="color" style="background:#FB21CC;"></span>
-                                    <span class="color" style="background:#49F040;"></span>
                                     <span class="color" style="background:#D22A2A;"></span>
-                                    <span class="color" style="background:#A95CC1;"></span>
                                 </div>
-                                    <button class="btn btn-outline-dark mt-auto" type="button" onclick="addToCart(this)">
-                                        Comprar
-                                    </button>
+
+                                <!-- Button Comprar -->
+                                <button class="btn btn-outline-dark mt-auto" type="button" onclick="addToCart(this)">Comprar</button>
                             </div>
                         </div>
                     </div>
